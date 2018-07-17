@@ -1,0 +1,184 @@
+.video-wrapper{
+	&:before{
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.26);
+		z-index: 1;
+	}
+}
+video {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%; 
+	min-height: 100%;
+}
+header{
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	padding-top: 200px;
+	color: #fff;
+	height: 100vh;
+	user-select: none;
+	h1{
+		text-shadow: 0 0 20px #000;
+		font-size: 40px;
+		font-weight: 900;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+	p{
+		margin-top: 100px;
+		font-size: 22px;
+		background-color: rgba(#00334e, 0.6);
+		padding: 15px;
+		border-radius: 6px;
+	}
+}
+main{
+	position: relative;
+	z-index: 2;
+	background-color: #fff;
+	padding: 60px 0;
+	
+	h2{
+		&:before{
+			content: "";
+			position: absolute;
+			left: -16px;
+			top: -10px;
+			background-image: url(../img/flower.svg);
+			background-size: cover;
+			width: 40px;
+			height: 40px;
+			z-index: -1;
+			animation: 2s rotation infinite;
+			
+			@keyframes rotation{
+				from{
+					transform: rotate(0);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+		}
+	}
+	ul{
+		margin-top: 40px;
+		li{
+			img{
+				width: 350px;
+				height: 250px;
+				max-width: 100%;
+			}
+		}
+	}
+}
+section{
+	padding: 60px 0;
+	background-color: #d0d2d3;
+	position: relative;
+	z-index: 1;
+	
+	h2{
+		pointer-events: none;
+	}
+	.contacts{
+		margin-top: 40px;
+		&__item{
+			margin-bottom: 20px;
+			.type{
+				margin-bottom: 10px;
+				text-shadow: 0 0 20px #fff;
+				font-size: 20px;
+			}
+			.contact{
+				color: #0099e5;
+				font-size: 20px;
+			}
+			a{
+				color: #f85a40;
+				position: relative;
+				padding-left: 40px;
+				font-size: 18px;
+				&:before{
+					content: "";
+					position: absolute;
+					left: 0;
+					width: 26px;
+					height: 26px;
+					background-size: cover;
+					top: 50%;
+					transform: translateY(-50%);
+					transition: .3s;
+				}
+				&.phone{
+					&:before{
+						background-image: url(../img/smartphone.svg);
+					}
+					&:hover{
+						&:before{
+							animation: 1.2s ring 3;
+							
+							@keyframes ring{
+								15%{
+									transform: translateY(-50%) rotate(15deg);
+								}
+								25%{
+									transform: translateY(-50%) rotate(-35deg);
+								}
+								50%{
+									transform: translateY(-50%) rotate(15deg);
+								}
+							}
+						}
+					}
+				}
+				&.mail{
+					&:before{
+						background-image: url(../img/paper-plane.svg);
+					}
+					&:hover{
+						&:before{
+							animation: 1s fly;
+							
+							@keyframes fly{
+								20%{
+									transform: translate(-50%, 20%);
+								}
+								50%{
+									transform: translate(150%, -120%) rotate(15deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#map{
+	background-color: lightcoral;
+	padding: 100px 0;
+}
+footer{
+	position: relative;
+	z-index: 1;
+	background-color: #fff;
+	text-align: center;
+	padding: 10px 0;
+}
+#particles-js{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+}
