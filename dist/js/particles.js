@@ -498,7 +498,7 @@ var pJS = function(tag_id, params){
           var img_obj = pJS.tmp.img_obj;
         }
         var element = document.createElement('img');
-        element.src = '../img/image1.png';
+        element.src = '../img/oleander.svg';
             
         img_obj = element;
         if(img_obj){

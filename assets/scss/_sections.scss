@@ -1,4 +1,9 @@
 .video-wrapper{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%; 
+	min-height: 100%;
 	&:before{
 		content: "";
 		position: absolute;
@@ -24,6 +29,7 @@ header{
 	padding-top: 200px;
 	color: #fff;
 	height: 100vh;
+	min-height: 600px;
 	user-select: none;
 	h1{
 		text-shadow: 0 0 20px #000;
@@ -82,7 +88,9 @@ main{
 }
 section{
 	padding: 60px 0;
-	background-color: #d0d2d3;
+	background-color: #fff;
+	border-top: 2px solid #fd5c63;
+	border-bottom: 2px solid #fd5c63;
 	position: relative;
 	z-index: 1;
 	
@@ -164,8 +172,8 @@ section{
 	}
 }
 #map{
-	background-color: lightcoral;
-	padding: 100px 0;
+	box-shadow: 0 0 10px #000;
+	padding: 0;
 }
 footer{
 	position: relative;
@@ -180,5 +188,47 @@ footer{
 	top: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 2;
+}
+#previewModal{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	&.active{
+		display: block;
+	}
+}
+#preloader{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	z-index: 5;
+	
+	&.load{
+		animation: 1s fade forwards;
+		
+		@keyframes fade {
+			0{
+				opacity: 1;
+			}
+			100%{
+				opacity: 0;
+				z-index: -1;
+			}
+		}
+	}
+	img{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
